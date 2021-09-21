@@ -52,7 +52,7 @@ public class BookController {
 	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
 	public String addBook(@PathVariable("id") Long bookId, Model model) {
 		model.addAttribute("book", repository.findById(bookId));
-		model.addAttribute("category", drepository.findAll());
+		model.addAttribute("categories", drepository.findAll());
 		return "editbook";
 	}
 }

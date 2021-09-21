@@ -28,9 +28,9 @@ public class BookStoreApplication {
 			System.out.println("save a couple of books");
 			drepository.save(new Category("Thrillers"));
 			drepository.save(new Category("Novels"));
-			drepository.save(new Category("Children's books"));
+			drepository.save(new Category("Children"));
 			
-			srepository.save(new Book("Potter1", "Kirjoittaja1", "1980", "4673", 129.0, drepository.findByName("Children's books").get(0)));
+			srepository.save(new Book("Potter1", "Kirjoittaja1", "1980", "4673", 129.0, drepository.findByName("Children").get(0)));
 			srepository.save(new Book("Potter2", "Kirjoittaja2", "1989", "4655", 179.0, drepository.findByName("Novels").get(0)));
 			
 			System.out.println("fetch all books");
