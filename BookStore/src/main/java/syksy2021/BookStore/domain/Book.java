@@ -10,11 +10,11 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Book {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	private String title;
 	private String author;
-	private String year;
+	private int year;
 	private String isbn;
 	private double price;
 	
@@ -25,7 +25,7 @@ public class Book {
 	
 	public Book() {}
 	
-	public Book(String title, String author, String year, String isbn, double price, Category category) {
+	public Book(String title, String author, int year, String isbn, double price, Category category) {
 		super();
 		this.title = title;
 		this.author = author;
@@ -35,12 +35,12 @@ public class Book {
 		this.category = category;
 	}
 	
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public Long getId() {
 		return id;
-	}
-	
-	public void setID(Long id) {
-		this.id = id;
 	}
 
 	public String getTitle() {
@@ -59,11 +59,11 @@ public class Book {
 		this.author = author;
 	}
 
-	public String getYear() {
+	public int getYear() {
 		return year;
 	}
 
-	public void setYear(String year) {
+	public void setYear(int year) {
 		this.year = year;
 	}
 
